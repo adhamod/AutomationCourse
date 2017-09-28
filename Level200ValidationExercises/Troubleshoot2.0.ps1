@@ -4,7 +4,7 @@
 #$location = "westus"
 #New-AzureRmResourceGroup -ResourceGroupName $resourceGroupName -Location $location
 
-$templateFileURI = "https://raw.githubusercontent.com/boklyn/ARMQualLab/master/200/Template2.json"
+$templateFileURI = "https://github.com/adhamod/AutomationCourse/blob/master/Level200ValidationExercises/Template2.json"
 $parameters = @{}
 
 $parameters.Add("storageAccountType","Standard_GRS")
