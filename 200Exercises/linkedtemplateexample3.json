@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageAccountName": { "type": "string" },
+    "containerSasToken": { "type": "string" }
+  },
+  "resources": [
+    {
+      "apiVersion": "2015-01-01",
+      "name": "storageTemplate",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "[concat('https://anikastorage.blob.core.windows.net/armautomationprivate/linkedtemplateexample3.json', 'linkedstandardstorage.json'), parameters('containerSasToken'))]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "storageAccountName": { "value": "[parameters('storageAccountName')]" }
+        }
+      }
+    }
+  ]
+}
+  
